@@ -1,0 +1,17 @@
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.deps.json
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.dll
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.pdb
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.AssemblyInfoInputs.cache
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.AssemblyInfo.cs
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.dll
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.pdb
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.csprojAssemblyReference.cache
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.deps.json
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.dll
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\bin\Debug\netstandard2.0\WebAPIDemo.Model.pdb
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.AssemblyInfoInputs.cache
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.AssemblyInfo.cs
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.csproj.CoreCompileInputs.cache
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.dll
+C:\Personal\Tutorials\WebAPI\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.pdb
+D:\Tutorials\WebAPi\projects\WebAPIStandardProject\WebAPIDemo.Model\obj\Debug\netstandard2.0\WebAPIDemo.Model.csproj.CoreCompileInputs.cache
