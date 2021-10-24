@@ -33,17 +33,21 @@ namespace WebAPIDemo.API.Controllers
         [HttpGet(Name = "EmployeeList")]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            try
-            {
+            //try
+            //{
+                throw new Exception("I am thorwn out of the window");
+
                 _logger.LogTrace("GetEmployees call received");
                 var employees = await _employeerepository.GetEmployees();
                 return Ok(_mapper.Map<IEnumerable<EmployeeResultDto>>(employees));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error while fetching GetEmployees");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error while retrieving data");
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex, "Error while fetching GetEmployees");
+                
+            //    return StatusCode(StatusCodes.Status500InternalServerError, "Error while retrieving data");
+
+            //}
         }
 
         [HttpGet("{id:int}")]

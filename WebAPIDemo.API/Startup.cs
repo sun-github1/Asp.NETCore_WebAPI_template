@@ -52,14 +52,18 @@ namespace WebAPIDemo.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/Error");
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIDemo.API v1"));
             }
             else
             {
                 app.UseExceptionHandler("/Error");
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
             }
+            app.UseStatusCodePages();
 
             app.UseHttpsRedirection();
 
