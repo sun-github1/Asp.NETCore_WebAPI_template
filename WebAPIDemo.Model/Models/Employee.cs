@@ -12,7 +12,8 @@ namespace WebAPIDemo.Model.Models
         public string EmployeeName { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
-        public int DepartmentId { get; set; }
         public Gender Gender { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }
