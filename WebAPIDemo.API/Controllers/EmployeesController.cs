@@ -55,7 +55,7 @@ namespace WebAPIDemo.API.Controllers
                 var employee = await _employeerepository.GetEmployeeById(id);
                 if(employee!=null)
                 {
-                    return Ok(await _employeerepository.GetEmployeeById(id));
+                    return Ok(_mapper.Map<EmployeeResultDto>(employee));
                 }
                 return NotFound();
             }
@@ -67,7 +67,7 @@ namespace WebAPIDemo.API.Controllers
         }
 
         [HttpGet("{search}")]
-        public async Task<ActionResult<Employee>> Search(string name, Gender? gender)
+        public async Task<ActionResult<IEnumerable<Employee>>> Search(string name, Gender? gender)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace WebAPIDemo.API.Controllers
                 var employees = await _employeerepository.SearchEmployees(name,gender);
                 if (employees != null)
                 {
-                    return Ok(employees);
+                    return Ok(_mapper.Map<IEnumerable<EmployeeResultDto>>(employees));
                 }
                 return NotFound();
             }
@@ -87,17 +87,17 @@ namespace WebAPIDemo.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Employee>> AddEmployee([FromBody]Employee employee)
+        public async Task<ActionResult<Employee>> AddEmployee([FromBody]EmployeeAddDto employeetoadd)
         {
             try
             {
                 _logger.LogTrace("AddEmployee call received");
 
-                if(employee==null)
+                if(employeetoadd == null)
                 {
                     return BadRequest();
                 }
-
+                var employee = _mapper.Map<Employee>(employeetoadd);
                 var employeewithemail= await _employeerepository.GetEmployeeByEmail(employee.Email);
 
                 if (employeewithemail != null)
@@ -115,7 +115,7 @@ namespace WebAPIDemo.API.Controllers
                 {
                     //Add a Location header to the response. The Location header specifies the URI of the newly created employee object
                     return CreatedAtAction(nameof(GetEmployeeById),
-                        new { id= addedemployee .EmployeeId},
+                        new { id= addedemployee.EmployeeId},
                         addedemployee);
                 }
                 
@@ -128,16 +128,17 @@ namespace WebAPIDemo.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<Employee>> UpdateEmployee([FromBody] Employee employee)
+        public async Task<ActionResult<Employee>> UpdateEmployee([FromBody] EmployeeEditDto employeeedit)
         {
             try
             {
                 _logger.LogTrace("UpdateEmployee call received");
 
-                if (employee == null)
+                if (employeeedit == null)
                 {
                     return BadRequest();
                 }
+                var employee = _mapper.Map<Employee>(employeeedit);
 
                 var existingEmployee = await _employeerepository.GetEmployeeById(employee.EmployeeId);
 
