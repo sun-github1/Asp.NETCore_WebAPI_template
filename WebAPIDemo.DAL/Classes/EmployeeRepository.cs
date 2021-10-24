@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +15,26 @@ namespace WebAPIDemo.DAL.Classes
     public class EmployeeRepository : IEmployeeRepository
     {
         public readonly ApplicationDbContext _appDbContext;
-
-        public EmployeeRepository(ApplicationDbContext appDbContext)
+        private ILogger<EmployeeRepository> logger;
+        public EmployeeRepository(ApplicationDbContext appDbContext,ILogger<EmployeeRepository> logger)
         {
             this._appDbContext = appDbContext;
+            this.logger = logger;
         }
 
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
-            return await _appDbContext.Employees.ToListAsync();
+            logger.LogInformation("GetEmployees received");
+            return await _appDbContext.Employees
+                .Include(x=>x.Department)
+                .ToListAsync();
         }
 
         public async Task<Employee> GetEmployeeById(int employeeId)
         {
-            var employee = await _appDbContext.Employees.FirstOrDefaultAsync(x => x.EmployeeId == employeeId);
+            var employee = await _appDbContext.Employees
+                .Include(x => x.Department)
+                .FirstOrDefaultAsync(x => x.EmployeeId == employeeId);
             return employee;
         }
 
